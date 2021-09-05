@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="nav" id="nav">
+            <div class="logo"><img src="/pomodor.png" alt="pomodoro"></div>
+            <div class="title"><h1>Pomodoro</h1></div>
+            <a href="#popup"><h3>Settings</h3></a>
+            <a href=""><h3>About</h3></a>
+        </div>
+        <div class="timer">
+            <div class="clock">
+                <div class="mins">0</div>
+                <div>:</div>
+                <div class="secs">00</div>
+            </div>
+            <svg class="progress-ring" height="200" width="200">
+                <circle 
+                    class="progress-ring_circle"
+                    stroke-width="8"
+                    fill = "transparent"
+                    r="84"
+                    cx="100"
+                    cy="100"
+                    stroke = "white";
+                />
+            </svg>
+        </div>
+        <div class="btn-group">
+            <button class="start">start</button>
+            <button class="reset">reset</button>
+            <button class="pause">pause</button>
+        </div>
+        <div class="popup" id="popup">
+            <a href="#nav" class="popup_area"></a>
+            <div class="popup_body">
+                <div class="popup_content">
+                    <a href="#nav" class="popup_close">X</a>
+                    <form action=".">
+                        <h1 class="form_title">Settings</h1>
+                        <div class="form_group">
+                            <input class="form_input" type="number" value="25" id="focusTime">
+                            <label class="form_label">Focus time</label>
+                        </div>
+                        <div class="form_group">
+                            <input class="form_input" type="number" value="5" id="breakTime">
+                            <label class="form_label">Break time</label>
+                        </div>
+                        <button class="form_button" type="submit">save settings</button>
+                    </form>
+                    <div class="music_option">
+                        <h3>Background music</h3>
+                        <select name="" id="select">
+                            <option value="0">No music</option>
+                            <option value="forest">Forest</option>
+                            <option value="rain">Rain</option>
+                        </select>
+                        <audio src="/forest.mp3" class = "forest"></audio>
+                        <audio src="/rain.mp3" class = "rain"></audio>
+                        <h3>Alarm music</h3>
+                        <select name="" id="select_alarm">
+                            <option value="0">No music</option>
+                            <option value="1">Bells</option>
+                            <option value="2">Alarm</option>
+                            <option value="3">Win</option>
+                        </select>
+                        <audio src="/bells.mp3" class = "bells"></audio>
+                        <audio src="/alarm.mp3" class = "alarm"></audio>
+                        <audio src="/win.mp3" class = "win"></audio>
+                    </div>   
+                    
+                    
+                </div>
+            </div>    
+        </div>  
+    </div> 
+    <script src="settings.js"></script>   
+    <script src="timer.js"></script>   
+    <script src="progress.js"></script>   
+    <script src="select_music.js"></script> 
+</body>
+</html>
+

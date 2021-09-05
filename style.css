@@ -1,0 +1,215 @@
+body {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(231,87,72);
+    letter-spacing: 1px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nav {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    height: 50px;
+    width: 50px;
+    margin-right: 20px;
+}
+.nav a {
+    text-decoration: none;
+    color: white;
+}
+.nav h3 {
+    padding-left: 20px;
+    padding-top: 5px;
+}
+.timer {
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+}
+.clock {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 80px;
+    left: 68px;
+    font-size: 30px;
+}
+.progress-ring_circle {
+    transform-origin: center;
+    transform: rotate(-90deg);
+    stroke: rgb(255, 255, 255);
+    transition: stroke-dashoffset 0.5s;
+}
+.danger {
+    stroke: red;
+    animation: pulse 0.9s ease-in-out infinite; 
+}
+button {
+    background-color: rgb(235, 137, 137);
+    text-decoration: none; 
+    height: 30px;
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center; 
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+@keyframes pulse {
+    0%,
+    100% {
+        transform: rotate(-90deg) scale(1);
+    }
+    50% {
+        transform: rotate(-90deg) scale(1.05);
+    }
+    75% {
+        transform: rotate(-90deg) scale(0.8);
+    }
+}
+.btn_animation {
+    transition: 0.3s;
+    width: 150px;
+    height: 80px;
+    font-size: 30px;
+}
+.btn_hiddden {
+    display: none;
+}
+form {
+    width: 300px !important;
+    padding: 32px 32px 0 32px;
+}
+.form_input,
+.form_button {
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    font-size: 16px;
+}
+.form_title {
+    text-align: center;
+    margin-bottom: 32px;
+    font-weight: normal;
+    color:rgb(195,73,61);
+}
+.form_group {
+    position: relative;
+    margin-bottom: 32px;
+}
+.form_label {
+    position: absolute;
+    top: 0;
+    color: rgb(195,73,61);
+    transition: 0.3s;
+}
+.form_input {
+    width: 100%;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: transparent;
+    outline: none;
+    transition: 0.3s;
+    color:#e0e0e0;
+}
+.form_input:focus {
+    border-bottom: 1px solid rgb(195,73,61);
+    color:rgb(195,73,61);
+}
+.form_button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    color: #eee;
+    cursor: pointer;
+    transition: 0.3s;
+    height:50px;
+    width: 150px;
+    text-align: center;
+}
+button:hover{
+    background-color: rgb(195,73,61);
+}
+.form_input:focus ~ .form_label, 
+.form_input:not(:placeholder-shown) ~ .form_label 
+{
+    top: -18px;
+    font-size: 12px;
+    color: rgb(195,73,61);
+}
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.8s ease 0s;
+}
+.popup:target {
+    opacity: 1;
+    visibility: visible;
+}
+.popup:target .popup_content {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+.popup_area {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left:0;
+}
+.popup_body {
+    min-height: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 10px ;
+}
+.popup_content {
+    max-width: 800px;
+    position: relative;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 16px rgb(211, 189, 189);
+    background-color: white;
+    opacity: 0;
+    transition: all 0.8s ease 0s;
+    transform: translate(0px, -100%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 32px;
+}
+.popup_close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(195,73,61);
+}
+.music_option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 32px 32px 32px;
+}
+.music_option h3 {
+    color: rgb(195,73,61);
+    font-size: 16px;
+}
