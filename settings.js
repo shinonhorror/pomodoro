@@ -8,6 +8,7 @@ const resetBtn = document.querySelector(".reset");
 /** Added a new event, when we click on button "save settings" */
 
 document.querySelector("form").addEventListener("submit", (e)=>{
+    pause_all();
     e.preventDefault();
     localStorage.setItem("focusTime",focusTimeInput.value); // Saved a key = focusTime, value = value, which was write in input form
     localStorage.setItem("breakTime",breakTimeInput.value);
@@ -18,7 +19,6 @@ document.querySelector("form").addEventListener("submit", (e)=>{
     localStorage.setItem("background_range", background_range.value);
     localStorage.setItem("alarm_range", alarm_range.value);
     window.location.hash="nav";
-    pause_all();
 });
 
 /** Added a new event, when we click on button "reset" */
@@ -52,12 +52,14 @@ pauseBtn.addEventListener("click", ()=>{
         pauseBtn.textContent = "pause";
         pauseBtn.classList.remove("resume");
         option = localStorage.getItem("music");
-        background_music(option); // select a background music
+        value = +localStorage.getItem("background_range");
+        background_music(option,value); // select a background music
     } else {
-        background_music("stop");
         clearTimeout(initial);
         pauseBtn.textContent = "resume";
         pauseBtn.classList.add("resume");
+        value = +localStorage.getItem("background_range");
+        background_music("stop", value);
         paused = true;
     }
 });
