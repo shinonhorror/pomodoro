@@ -1,6 +1,8 @@
 /** There selected a different objectts in DOM */
 const focusTimeInput = document.querySelector("#focusTime");
 const breakTimeInput = document.querySelector("#breakTime");
+const longBreakTimeInput = document.querySelector("#longBreakTime");
+const longBreakInterval = document.querySelector("#longBreakInterval");
 const pauseBtn = document.querySelector(".pause");
 const resetBtn = document.querySelector(".reset");
 /** Added a new event, when we click on button "save settings" */
@@ -9,6 +11,8 @@ document.querySelector("form").addEventListener("submit", (e)=>{
     e.preventDefault();
     localStorage.setItem("focusTime",focusTimeInput.value); // Saved a key = focusTime, value = value, which was write in input form
     localStorage.setItem("breakTime",breakTimeInput.value);
+    localStorage.setItem("longBreakTime",longBreakTimeInput.value);
+    localStorage.setItem("longBreakInterval",longBreakInterval.value);
     localStorage.setItem("music", select_background.selectedIndex);
     localStorage.setItem("alarm", select_alarm.selectedIndex);
 });
@@ -16,6 +20,7 @@ document.querySelector("form").addEventListener("submit", (e)=>{
 /** Added a new event, when we click on button "reset" */
 
 resetBtn.addEventListener("click", ()=>{
+    count = 0;
     startBtn.classList.remove("btn_hiddden"); // show a button named "start"
     pauseBtn.classList.remove("btn_animation");
     resetBtn.classList.remove("btn_animation");

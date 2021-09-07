@@ -8,14 +8,20 @@ const startBtn = document.querySelector(".start");
 localStorage.setItem("btn","focus"); // Data, which was write in localstorage saved, when we restart a browser, in this case, we saved a key = btn, values = focus
 
 
-let initial, totalsec, perc, paused, mins, seconds, option; // initialization 
+let initial, totalsec, perc, paused, mins, seconds, option, count=0; // initialization 
 /** Added a new event, when click on button "start" */
 startBtn.addEventListener("click",()=>{
     let btn=localStorage.getItem("btn"); // we receive in "btn" a value in localstorage, which contains a value ("focus" on default)
     if (btn == "focus"){
         mins = +localStorage.getItem("focusTime"); // receive in mins a focusTime
     } else {
-        mins = +localStorage.getItem("breakTime"); // receive in mins a breakTime
+        if (count==+localStorage.getItem("longBreakInterval")) {
+            mins = +localStorage.getItem("longBreakTime");
+            count = 0;
+        }
+        else {
+            mins = +localStorage.getItem("breakTime"); // receive in mins a breakTime
+        }   
     }
     seconds = mins * 60; 
     totalsec = mins * 60;
@@ -56,6 +62,7 @@ function decremenT(){
                 icon: 'pomodor.png',
                 dir: 'auto'
             });
+            ++count; 
             startBtn.textContent = "Break";
             startBtn.classList.add("break");
             localStorage.setItem("btn", "break");

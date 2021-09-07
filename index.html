@@ -54,30 +54,36 @@
                             <input class="form_input" type="number" value="5" id="breakTime">
                             <label class="form_label">Break time</label>
                         </div>
+                        <div class="form_group">
+                            <input class="form_input" type="number" value="15" id="longBreakTime">
+                            <label class="form_label">Long break time</label>
+                        </div>
+                        <div class="form_group">
+                            <input class="form_input" type="number" value="4" id="longBreakInterval">
+                            <label class="form_label">Long break interval</label>
+                        </div>
+                        <div class="music_option">
+                            <h3>Background music</h3>
+                            <select name="" id="select">
+                                <option value="0">No music</option>
+                                <option value="forest">Forest</option>
+                                <option value="rain">Rain</option>
+                            </select>
+                            <audio src="media/forest.mp3" class = "forest"></audio>
+                            <audio src="media/rain.mp3" class = "rain"></audio>
+                            <h3>Alarm music</h3>
+                            <select name="" id="select_alarm">
+                                <option value="0">No music</option>
+                                <option value="1">Bells</option>
+                                <option value="2">Alarm</option>
+                                <option value="3">Win</option>
+                            </select>
+                            <audio src="media/bells.mp3" class = "bells"></audio>
+                            <audio src="media/alarm.mp3" class = "alarm"></audio>
+                            <audio src="media/win.mp3" class = "win"></audio>
+                        </div>     
                         <button class="form_button" type="submit">save settings</button>
                     </form>
-                    <div class="music_option">
-                        <h3>Background music</h3>
-                        <select name="" id="select">
-                            <option value="0">No music</option>
-                            <option value="forest">Forest</option>
-                            <option value="rain">Rain</option>
-                        </select>
-                        <audio src="media/forest.mp3" class = "forest"></audio>
-                        <audio src="media/rain.mp3" class = "rain"></audio>
-                        <h3>Alarm music</h3>
-                        <select name="" id="select_alarm">
-                            <option value="0">No music</option>
-                            <option value="1">Bells</option>
-                            <option value="2">Alarm</option>
-                            <option value="3">Win</option>
-                        </select>
-                        <audio src="media/bells.mp3" class = "bells"></audio>
-                        <audio src="media/alarm.mp3" class = "alarm"></audio>
-                        <audio src="media/win.mp3" class = "win"></audio>
-                    </div>   
-                    
-                    
                 </div>
             </div>    
         </div>  
