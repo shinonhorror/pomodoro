@@ -64,23 +64,33 @@
                         </div>
                         <div class="music_option">
                             <h3>Background music</h3>
-                            <select name="" id="select">
-                                <option value="0">No music</option>
-                                <option value="forest">Forest</option>
-                                <option value="rain">Rain</option>
-                            </select>
+                            <input id="background_range" min="0" max="100" value="100" type="range">
+                            <div class="select_wrapper">
+                                <select name="" id="select" class="select">
+                                    <option value="0">No music</option>
+                                    <option value="forest">Forest</option>
+                                    <option value="rain">Rain</option>
+                                </select>
+                            </div>
                             <audio src="media/forest.mp3" class = "forest"></audio>
                             <audio src="media/rain.mp3" class = "rain"></audio>
-                            <h3>Alarm music</h3>
-                            <select name="" id="select_alarm">
-                                <option value="0">No music</option>
-                                <option value="1">Bells</option>
-                                <option value="2">Alarm</option>
-                                <option value="3">Win</option>
-                            </select>
+                            <h3>Alarm music</h3> 
+                            <input id="alarm_range" min="0" max="100" value="100" type="range">
+                            <div class="select_wrapper">
+                                <select name="" id="select_alarm" class="select">
+                                    <option value="0">No music</option>
+                                    <option value="1">Bells</option>
+                                    <option value="2">Alarm</option>
+                                    <option value="3">Win</option>
+                                    <option value="4">Anime</option>
+                                    <option value="5">Gachi</option>
+                                </select>
+                            </div>
                             <audio src="media/bells.mp3" class = "bells"></audio>
                             <audio src="media/alarm.mp3" class = "alarm"></audio>
                             <audio src="media/win.mp3" class = "win"></audio>
+                            <audio src="media/yamete_kudasai.mp3" class = "anime"></audio>
+                            <audio src="media/rip-ears.mp3" class = "gachi"></audio>
                         </div>     
                         <button class="form_button" type="submit">save settings</button>
                     </form>

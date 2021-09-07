@@ -15,6 +15,8 @@ document.querySelector("form").addEventListener("submit", (e)=>{
     localStorage.setItem("longBreakInterval",longBreakInterval.value);
     localStorage.setItem("music", select_background.selectedIndex);
     localStorage.setItem("alarm", select_alarm.selectedIndex);
+    localStorage.setItem("background_range", background_range.value);
+    localStorage.setItem("alarm_range", alarm_range.value);
 });
 
 /** Added a new event, when we click on button "reset" */

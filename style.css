@@ -135,7 +135,6 @@ form {
     height:50px;
     width: 150px;
     text-align: center;
-    
 }
 button:hover{
     background-color: rgb(195,73,61);
@@ -213,4 +212,42 @@ button:hover{
 .music_option h3 {
     color: rgb(195,73,61);
     font-size: 16px;
+}
+.select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    background-color: transparent;
+    padding: 10px 35px 10px 15px;
+    outline: none;
+    cursor: pointer;
+}
+.select:focus {
+    border: 1px solid rgb(195,73,61);
+}
+/*Delete a default arrow on IE 10/11*/
+.select::-ms-expand {
+    display:none;
+}
+.select_wrapper {
+    position: relative;
+}
+.select_wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right:15px;
+    transform: translateY(-50%);
+    display: block;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10.4px 6px 0 6px;
+    border-color: rgb(195,73,61) transparent transparent transparent;
 }

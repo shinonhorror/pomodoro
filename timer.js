@@ -32,7 +32,8 @@ startBtn.addEventListener("click",()=>{
     //startBtn.style.transform = "scale(0)"; // hide a button named "start"
     paused = false; // variable paused = false, cuz now timer is on
     option = localStorage.getItem("music");
-    background_music(option); // select a background music
+    value = +localStorage.getItem("background_range");
+    background_music(option,value); // select a background music
 });
 /** Function, which allow to show a picture with a live clock */
 function decremenT(){
@@ -54,7 +55,8 @@ function decremenT(){
         seconds = 0;
         background_music("stop");
         alarm_option = localStorage.getItem("alarm");
-        alarm_music(alarm_option);
+        alarm_value = localStorage.getItem("alarm_range");
+        alarm_music(alarm_option, alarm_value);
         let btn = localStorage.getItem("btn"); // we receive in "btn" a value in localstorage, which contains a value ("focus" on default)
         if (btn == "focus"){
             sendNotification('Time is over!', {
