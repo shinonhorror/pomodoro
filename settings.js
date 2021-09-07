@@ -18,6 +18,7 @@ document.querySelector("form").addEventListener("submit", (e)=>{
     localStorage.setItem("background_range", background_range.value);
     localStorage.setItem("alarm_range", alarm_range.value);
     window.location.hash="nav";
+    pause_all();
 });
 
 /** Added a new event, when we click on button "reset" */
