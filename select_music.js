@@ -80,31 +80,26 @@ select_alarm.addEventListener("click", function (){
         pause_all();
         bell.play();
         bell.volume = alarm_range.value/100;
-        setTimeout(function(){bell.pause()}, 5000);
     }
     else if(select_alarm.selectedIndex == 2) {
         pause_all();
         alarm.play();
         alarm.volume = alarm_range.value/100;
-        setTimeout(function(){alarm.pause()}, 5000);
     }
     else if(select_alarm.selectedIndex == 3) {
         pause_all();
         win.play();
         win.volume = alarm_range.value/100;
-        setTimeout(function(){win.pause()}, 5000);
     }
     else if(select_alarm.selectedIndex == 4) {
         pause_all();
         anime.play();
         anime.volume = alarm_range.value/100;
-        setTimeout(function(){anime.pause();}, 5000);
     }
     else {
         pause_all();
         gachi.play();
         gachi.volume = alarm_range.value/100;
-        setTimeout(function(){gachi.pause();}, 5000);
     }
 })
 
@@ -118,13 +113,11 @@ select_background.addEventListener("click", function (){
         rain.pause();
         forest.volume = background_range.value/100;
         forest.play();   
-        setTimeout(function(){forest.pause()}, 5000);
     }
     else {
         forest.pause();
         rain.volume = background_range.value/100;
-        rain.play();
-        setTimeout(function(){rain.pause()}, 5000);
+        rain.play();;
     }
 })
 
