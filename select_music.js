@@ -118,17 +118,19 @@ select_background.addEventListener("click", function (){
         rain.pause();
         forest.volume = background_range.value/100;
         forest.play();   
-        setTimeout(function(){forest.pause()}, 5000);
+        setTimeout(function(){forest.pause()}, 2000);
     }
     else {
         forest.pause();
         rain.volume = background_range.value/100;
         rain.play();
-        setTimeout(function(){rain.pause()}, 5000);
+        setTimeout(function(){rain.pause()}, 2000);
     }
 })
 
 function pause_all(){
+    rain.pause();
+    forest.pause();
     gachi.pause();
     anime.pause();
     win.pause();
