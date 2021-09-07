@@ -79,31 +79,31 @@ select_alarm.addEventListener("click", function (){
     else if(select_alarm.selectedIndex == 1) {
         pause_all();
         bell.play();
-        bell.volume = alarm_value/100;
+        bell.volume = alarm_range.value/100;
         setTimeout(function(){bell.pause()}, 5000);
     }
     else if(select_alarm.selectedIndex == 2) {
         pause_all();
         alarm.play();
-        alarm.volume = alarm_value/100;
+        alarm.volume = alarm_range.value/100;
         setTimeout(function(){alarm.pause()}, 5000);
     }
     else if(select_alarm.selectedIndex == 3) {
         pause_all();
         win.play();
-        win.volume = alarm_value/100;
+        win.volume = alarm_range.value/100;
         setTimeout(function(){win.pause()}, 5000);
     }
     else if(select_alarm.selectedIndex == 4) {
         pause_all();
         anime.play();
-        anime.volume = alarm_value/100;
+        anime.volume = alarm_range.value/100;
         setTimeout(function(){anime.pause();}, 5000);
     }
     else {
         pause_all();
         gachi.play();
-        gachi.volume = alarm_value/100;
+        gachi.volume = alarm_range.value/100;
         setTimeout(function(){gachi.pause();}, 5000);
     }
 })
