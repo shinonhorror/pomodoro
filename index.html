@@ -14,7 +14,7 @@
             <div class="logo"><img src="media/pomodor.png" alt="pomodoro"></div>
             <div class="title"><h1>Pomodoro</h1></div>
             <a href="#popup"><h3>Settings</h3></a>
-            <a href=""><h3>About</h3></a>
+            <a href="#popup_about"><h3>About</h3></a>
         </div>
         <div class="timer">
             <div class="clock">
@@ -39,6 +39,15 @@
             <button class="reset">reset</button>
             <button class="pause">pause</button>
         </div>
+        <div class="save_time">
+            <h1>Today you was in focus:</h1>
+            <div class="save_clock">
+                <div class="save_hour">00</div>
+                <div>hours</div>
+                <div class="save_mins">00</div>
+                <div>mins</div>
+            </div>
+        </div>
         <div class="popup" id="popup">
             <a href="#nav" class="popup_area"></a>
             <div class="popup_body">
@@ -51,11 +60,11 @@
                             <label class="form_label">Focus time</label>
                         </div>
                         <div class="form_group">
-                            <input class="form_input" type="number" value="5" id="breakTime" min = 1 max = 100>
+                            <input class="form_input" type="number" value="5" id="breakTime" min = 1 max = 60>
                             <label class="form_label">Break time</label>
                         </div>
                         <div class="form_group">
-                            <input class="form_input" type="number" value="15" id="longBreakTime" min = 1 max = 100>
+                            <input class="form_input" type="number" value="15" id="longBreakTime" min = 1 max = 60>
                             <label class="form_label">Long break time</label>
                         </div>
                         <div class="form_group">
@@ -97,11 +106,61 @@
                 </div>
             </div>    
         </div>  
+        <div class="popup" id = "popup_about">
+            <a href="#nav" class="popup_area"></a>
+            <div class="popup_body">
+                <div class="popup_content">
+                    <a href="#nav" class="popup_close">X</a>
+                    <h1>Pomodoro technique</h1>
+                    <h2>Why the tomato?</h2>
+                    <p> Pomodoro is the Italian word for tomato. The pomodoro technique
+                        was developed by Francesco Cirillo as a university student, when he
+                        used a tomato timer to measure his 25-minute sessions. These intervals
+                        became known as pomodoros and the technique became its namesake.
+                    </p>
+                    <h2>How work with a pomodoro technique</h2>
+                    <div class="technique">
+                        <div class="technique_item">
+                            <h3>1. Choose a task</h3>
+                            <p>Pick one project or task you want to focus on.</p>
+                        </div>
+                        <div class="technique_item">
+                            <h3>2. Focus</h3>
+                            <p>Set a timer for 25-30 minutes, and get to work.</p>
+                        </div>
+                        <div class="technique_item">
+                            <h3>3. Work</h3>
+                            <p>When the buzzer sounds, take a little break.</p>
+                        </div>
+                        <div class="technique_item">
+                            <h3>4. Short break</h3>
+                            <p>You mustn't pick your phone or watch videos on youtube, just relaxing.</p>
+                        </div>
+                        <div class="technique_item">
+                            <h3>5. Repeat</h3>
+                            <p>Start the timer again for another session.</p>
+                        </div>
+                        <div class="technique_item">
+                            <h3>6. Long break</h3>
+                            <p>After several sessions, take a longer break.</p>
+                        </div>
+                        <p>
+                            The Pomodoro Technique is useful if you get distracted while working 
+                            on a project or want to understand how long a task takes. It’s ideal 
+                            for many types of work including writing, coding, design, and study. 
+                            The technique also works if you have a lot of repetitive work to get 
+                            through, such as wading through a busy inbox.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div> 
     <script src="settings.js"></script>   
     <script src="timer.js"></script>   
     <script src="progress.js"></script>   
     <script src="select_music.js"></script> 
+    <script src="save_time.js"></script>
 </body>
 </html>
 

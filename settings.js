@@ -8,6 +8,7 @@ const resetBtn = document.querySelector(".reset");
 /** Added a new event, when we click on button "save settings" */
 
 document.querySelector("form").addEventListener("submit", (e)=>{
+    count=0;
     pause_all();
     e.preventDefault();
     localStorage.setItem("focusTime",focusTimeInput.value); // Saved a key = focusTime, value = value, which was write in input form
@@ -24,7 +25,8 @@ document.querySelector("form").addEventListener("submit", (e)=>{
 /** Added a new event, when we click on button "reset" */
 
 resetBtn.addEventListener("click", ()=>{
-    count = 0;
+    rst_savetime = mindiv.textContent;
+    savedFocustime(mins-rst_savetime);
     startBtn.classList.remove("btn_hiddden"); // show a button named "start"
     pauseBtn.classList.remove("btn_animation");
     resetBtn.classList.remove("btn_animation");

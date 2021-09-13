@@ -8,7 +8,7 @@ const startBtn = document.querySelector(".start");
 localStorage.setItem("btn","focus"); // Data, which was write in localstorage saved, when we restart a browser, in this case, we saved a key = btn, values = focus
 
 
-let initial, totalsec, perc, paused, mins, seconds, option, count=0; // initialization 
+let initial, totalsec, perc, paused, mins, seconds, option, count=0, rst_savetime; // initialization 
 /** Added a new event, when click on button "start" */
 startBtn.addEventListener("click",()=>{
     let btn=localStorage.getItem("btn"); // we receive in "btn" a value in localstorage, which contains a value ("focus" on default)
@@ -51,6 +51,7 @@ function decremenT(){
             circle.classList.add("danger") // add a class, which make progress bar pulsation 
         }
     } else {
+        let pastmins = mins;
         mins = 0; 
         seconds = 0;
         background_music("stop");
@@ -61,17 +62,23 @@ function decremenT(){
         if (btn == "focus"){
             sendNotification('Time is over!', {
                 body: 'Congrats! You passed a focus time!',
-                icon: 'pomodor.png',
+                icon: 'media/pomodor.png',
                 dir: 'auto'
             });
             ++count; 
-            startBtn.textContent = "Break";
+            savedFocustime(pastmins);
+            if (count==+localStorage.getItem("longBreakInterval")) {
+                startBtn.textContent = "long break";
+            }
+            else {
+                startBtn.textContent = "Break";
+            } 
             startBtn.classList.add("break");
             localStorage.setItem("btn", "break");
         } else {
             sendNotification('Time to focus!', {
                 body: 'Another focus time is waiting for you!',
-                icon: 'pomodor.png',
+                icon: 'media/pomodor.png',
                 dir: 'auto'
             });
             startBtn.classList.remove("break");
