@@ -1,6 +1,6 @@
 # Таймер помодоро
 
-https://shinonhorror.github.io/pomodoro/
+Ссылка на приложение - https://shinonhorror.github.io/pomodoro/
 
 <div>
 <img src="https://github.com/shinonhorror/pomodoro/assets/57846361/21054eee-f908-4f26-b44d-6d25aa2c6dc8">
